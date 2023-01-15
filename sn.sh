@@ -15,27 +15,24 @@ create() {
 
 # Function to join a social network.
 join() {
-    if git clone $1 --quiet 1>/dev/null 2>/dev/null;  then
-        echo "Joined the network!"
-    else 
-        echo "Either the network does not exist or it is already here."
-    fi
+    (git clone $1 --quiet 1>/dev/null 2>/dev/null &&
+    echo "Joined the network") ||
+    echo "Either the network does not exist or it is already here."
 }
 
 # Function to update the posts.
 pull() {
     git pull origin master --allow-unrelated-histories --quiet ||
+    (git config pull.rebase false && 
+    git pull origin master --allow-unrelated-histories --quiet) ||
     echo "You must connect to the server first (sn connect) with an existing network."
 }
 
 # Function to show a list of existing posts.
 log() {
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        echo -e "These are the existing posts:\n"
-        git log --pretty=format:"%h %s %an"
-    else
-        echo "No network here."
-    fi
+    (echo -e "These are the existing posts:\n" &&
+    git log --pretty=format:"%h %s %an") ||
+    echo "No network here."
 }
 
 # Function to show a specific post.
