@@ -4,13 +4,6 @@
 
 sn is a shell script for creating and interacting with decentralized social networks. It leverages the functionality of the Git version control system to allow for offline usage and data storage.
 
-## Setup
-
-```
-git clone https://github.com/jwwtc/sn.git
-export PATH="$PATH:/`pwd`/sn/"
-```
-
 ## Features
 
 - `sn create`: Create a new social network.
@@ -25,10 +18,17 @@ export PATH="$PATH:/`pwd`/sn/"
 - `sn members`: Show the netowrk's members.
 - `sn follow [user]`: Follow the posts of a specific member.
 
-## License
+### Setup
+
+```
+git clone https://github.com/jwwtc/sn.git
+export PATH="$PATH:/`pwd`/sn/"
+```
+
+### License
 
 This project is licensed under the [MIT License](https://github.com/jwwtc/sn/blob/master/LICENSE).
 
-## Acknowledgments
+### Acknowledgments
 
 - [Git](https://git-scm.com/) - Distributed version control system
