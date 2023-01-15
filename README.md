@@ -20,9 +20,10 @@ sn is a shell script for creating and interacting with decentralized social netw
 
 ### Setup
 
-`git clone https://github.com/jwwtc/sn.git`
-
-`export PATH="$PATH:/\`pwd\`/sn/"`
+```
+git clone https://github.com/jwwtc/sn.git
+export PATH="$PATH:/`pwd`/sn/"
+```
 
 ### License
 
