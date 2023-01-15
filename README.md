@@ -19,10 +19,10 @@ sn is a shell script for creating and interacting with decentralized social netw
 - `sn follow [user]`: Follow the posts of a specific member.
 
 ### Setup
-
+```
 `git clone https://github.com/jwwtc/sn.git`
-
 `export PATH="$PATH:/`pwd`/sn/"`
+```
 
 ### License
 
