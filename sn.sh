@@ -15,7 +15,7 @@ create() {
 
 # Function to join a social network.
 join() {
-    (git clone $1 --quiet 1>/dev/null 2>/dev/null &&
+    (git clone "$1" --quiet 1>/dev/null 2>/dev/null &&
     echo "Joined the network") ||
     echo "Either the network does not exist or it is already here."
 }
@@ -38,7 +38,7 @@ log() {
 # Function to show a specific post.
 show() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        git show $1 2>/dev/null || 
+        git show "$1" 2>/dev/null || 
         echo "There is no post with this name."
     else
         echo "No network here."
@@ -59,7 +59,7 @@ connect() {
 post() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         input_string="$*"
-        echo $input_string >> stories.txt
+        echo "$input_string" >> stories.txt
         git add stories.txt 1>/dev/null 2>/dev/null ||
         git commit -m "Added new story: $input_string" --quiet
         git push origin master --quiet && 
@@ -72,7 +72,7 @@ post() {
 # Function to like a specific post.
 like() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        if git rev-list -n 1 $1 &> /dev/null; then
+        if git rev-list -n 1 "$1" &> /dev/null; then
             echo "$(git config user.name) liked $1" >> likes.txt
             git add likes.txt
             git commit -m "Liked post: $1" --quiet
@@ -122,7 +122,7 @@ case $1 in
         create
         ;;
     "join")
-        join $2
+        join "$2"
         ;;
     "pull")
         pull
@@ -131,16 +131,16 @@ case $1 in
         log
         ;;
     "show")
-        show $2
+        show "$2"
         ;;
     "connect")
         connect
         ;;
     "post")
-        post $2
+        post "$2"
         ;;
     "like")
-        like $2
+        like "$2"
         ;;
     "push")
         push
@@ -149,7 +149,7 @@ case $1 in
         members
         ;;
     "follow")
-        follow $2
+        follow "$2"
         ;;
     *)
     echo "Invalid command. Use one of the available options (shown in the man page)."
