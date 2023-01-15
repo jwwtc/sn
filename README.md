@@ -22,7 +22,7 @@ sn is a shell script for creating and interacting with decentralized social netw
 
 `git clone https://github.com/jwwtc/sn.git`
 
-`export PATH="$PATH:/`pwd`/sn/"`
+`export PATH="$PATH:/\`pwd\`/sn/"`
 
 ### License
 
