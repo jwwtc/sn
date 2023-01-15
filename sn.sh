@@ -59,8 +59,8 @@ connect() {
 post() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         input_string="$*"
-        echo "$input_string" >> stories.txt
-        git add stories.txt 1>/dev/null 2>/dev/null ||
+        echo "$input_string" >> ./archive/stories.txt
+        git add ./archive/stories.txt 1>/dev/null 2>/dev/null ||
         git commit -m "Added new story: $input_string" --quiet
         git push origin master --quiet && 
         echo "Posted a new story!"
@@ -73,8 +73,8 @@ post() {
 like() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
         if git rev-list -n 1 "$1" &> /dev/null; then
-            echo "$(git config user.name) liked $1" >> likes.txt
-            git add likes.txt
+            echo "$(git config user.name) liked $1" >> ./archive/likes.txt
+            git add ./archive/likes.txt
             git commit -m "Liked post: $1" --quiet
             git push origin master --quiet
         else
