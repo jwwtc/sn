@@ -15,15 +15,15 @@ sn is a shell script for creating and interacting with decentralized social netw
 - `sn post "[text]"`: Post a new story to the network.
 - `sn like [post]`: Like a specific post.
 - `sn push`: Push locally made changes back to the server.
-- `sn members`: Show the netowrk's members.
+- `sn members`: Show the network's members.
 - `sn follow [user]`: Follow the posts of a specific member.
 
 ### Setup
 
-```
-git clone https://github.com/jwwtc/sn.git
-export PATH="$PATH:/`pwd`/sn/"
-```
+    ```
+    git clone https://github.com/jwwtc/sn.git
+    export PATH="$PATH:/`pwd`/sn/"
+    ```
 
 ### License
 
