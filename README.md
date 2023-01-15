@@ -18,7 +18,7 @@ sn is a shell script for creating and interacting with decentralized social netw
 - `sn members`: Show the network's members.
 - `sn follow [user]`: Follow the posts of a specific member.
 
-### Setup
+## Setup
 
 ```
 git clone https://github.com/jwwtc/sn.git
