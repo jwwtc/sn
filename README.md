@@ -14,6 +14,7 @@ sn is a shell script for creating and interacting with decentralized social netw
 - `sn push`: Push locally made changes back to the server.
 - `sn members`: Show the netowrk's members.
 - `sn follow`: Follow the posts of a specific member.
+
 Details can be found on the associated manual page.
 
 ## License
