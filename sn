@@ -8,7 +8,6 @@ create() {
         echo "There is a social network here already."
     else
         git init --quiet && echo "Created social network!"
-        ## git add . 1>/dev/null 2>/dev/null
         git commit -a -m "Created social network." --quiet
     fi
 }
@@ -88,7 +87,6 @@ like() {
 # Function to push locally made changes.
 push() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        ##git add . 1>/dev/null 2>/dev/null
         git commit -a -m "latest commit" --quiet
         git push origin master --quiet
     else
